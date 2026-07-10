@@ -16,3 +16,11 @@ class School:
         for student in self.students:
             if student.school_id == student_id:
                 return student
+
+    def add_student(self, student_data):
+        new_student = Student(**student_data)
+        self.students.append(new_student)
+    
+    def remove_student(self, student_id):
+        student = self.find_student_by_id(student_id)
+        self.students.remove(student)
